@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programme – Course du Campus</title>
+  <meta name="description" content="Déroulé heure par heure de la Course du Campus, du retrait des dossards à la remise des récompenses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a class="logo" href="index.html">Course du Campus</a>
+      <nav aria-label="Navigation principale">
+        <ul class="menu">
+          <li><a href="index.html">Présentation</a></li>
+          <li><a href="course.html">La course</a></li>
+          <li><a href="programme.html" aria-current="page">Programme</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="ouverture">
+      <div class="conteneur">
+        <div>
+          <h1>Le déroulé de la journée, heure par heure.</h1>
+          <p class="chapeau">
+            Samedi 17 avril 2027, sur le campus de [nom de l'université].
+            Arrivez dès 7 h 30 pour retirer votre dossard sans stress.
+          </p>
+        </div>
+        <div class="dossard" aria-hidden="true">
+          <p class="dossard-nom">Départ du 10 km</p>
+          <span class="dossard-chiffre">9h30</span>
+          <p class="dossard-precision">5 km à 9 h 45</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="deroule">
+      <div class="conteneur">
+        <h2>Le programme</h2>
+        <ol class="deroule">
+          <li>
+            <span class="heure">7 h 30</span>
+            <div class="etape">
+              <h3>Ouverture du village</h3>
+              <p>Retrait des dossards, consigne des sacs et café offert aux participants.</p>
+            </div>
+          </li>
+          <li>
+            <span class="heure">8 h 45</span>
+            <div class="etape">
+              <h3>Échauffement collectif</h3>
+              <p>Animé par les étudiants de la filière sport, ouvert à tous.</p>
+            </div>
+          </li>
+          <li>
+            <span class="heure">9 h 15</span>
+            <div class="etape">
+              <h3>Briefing et consignes de sécurité</h3>
+              <p>Présentation des parcours, des points de ravitaillement et des signaleurs.</p>
+            </div>
+          </li>
+          <li class="depart">
+            <span class="heure">9 h 30</span>
+            <div class="etape">
+              <h3>Départ du 10 km</h3>
+              <p>Ligne de départ devant le bâtiment principal du campus.</p>
+            </div>
+          </li>
+          <li class="depart">
+            <span class="heure">9 h 45</span>
+            <div class="etape">
+              <h3>Départ du 5 km</h3>
+              <p>Même ligne de départ, à l'allure de chacun, marche autorisée.</p>
+            </div>
+          </li>
+          <li>
+            <span class="heure">10 h 30</span>
+            <div class="etape">
+              <h3>Arrivée des premiers coureurs</h3>
+              <p>Ravitaillement à l'arrivée : eau, fruits et boissons chaudes.</p>
+            </div>
+          </li>
+          <li>
+            <span class="heure">11 h 30</span>
+            <div class="etape">
+              <h3>Remise des récompenses</h3>
+              <p>Podiums du 10 km et du 5 km, et tirage au sort de lots offerts par les partenaires.</p>
+            </div>
+          </li>
+          <li>
+            <span class="heure">12 h 30</span>
+            <div class="etape">
+              <h3>Repas partagé et clôture</h3>
+              <p>Moment convivial avec l'équipe d'organisation, fermeture du village à 14 h 00.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <p>Projet étudiant de [Prénom Nom], [nom de l'université], année 2026-2027.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

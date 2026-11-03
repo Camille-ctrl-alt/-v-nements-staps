@@ -1,0 +1,444 @@
+/* ==========================================================
+   Course du Campus – feuille de style commune
+   Palette : encre, papier, cobalt, jaune dossard, brume
+   Polices : Barlow Condensed (titres) + Barlow (texte)
+   ========================================================== */
+
+:root {
+  --encre: #10212e;
+  --papier: #f4f7f9;
+  --cobalt: #1f4fd8;
+  --dossard: #ffd23f;
+  --brume: #dce5ec;
+  --ardoise: #52626f;
+
+  --titres: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --texte: "Barlow", "Helvetica Neue", Arial, sans-serif;
+
+  --largeur: 68rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--encre);
+  font-family: var(--texte);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--cobalt);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--encre);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 3px;
+}
+
+.conteneur {
+  width: min(100% - 2.5rem, var(--largeur));
+  margin-inline: auto;
+}
+
+/* ---------- En-tête et navigation ---------- */
+
+.entete {
+  border-bottom: 2px solid var(--encre);
+  background: var(--papier);
+}
+
+.entete .conteneur {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding-block: 1rem;
+}
+
+.logo {
+  font-family: var(--titres);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--encre);
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: inline-block;
+  padding-block: 0.25rem;
+  border-bottom: 4px solid transparent;
+  color: var(--encre);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  border-bottom-color: var(--brume);
+}
+
+.menu a[aria-current="page"] {
+  border-bottom-color: var(--dossard);
+  font-weight: 700;
+}
+
+/* ---------- Bandeau d'ouverture et dossard ---------- */
+
+.ouverture {
+  padding-block: clamp(2.5rem, 7vw, 5rem);
+}
+
+.ouverture .conteneur {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--titres);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  letter-spacing: -0.005em;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.chapeau {
+  max-width: 34rem;
+  margin: 1.25rem 0 0;
+  font-size: 1.25rem;
+  color: var(--ardoise);
+}
+
+.dossard {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 20rem);
+  padding: 2rem 1.5rem 1.75rem;
+  border: 3px solid var(--encre);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 8px 8px 0 var(--dossard);
+  text-align: center;
+  transform: rotate(-3deg);
+  animation: pose 0.7s ease-out both;
+}
+
+/* les quatre trous d'épingle du dossard */
+.dossard::before,
+.dossard::after {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 2px solid var(--encre);
+  border-radius: 50%;
+}
+
+.dossard::before {
+  left: 0.8rem;
+}
+
+.dossard::after {
+  right: 0.8rem;
+}
+
+.dossard-nom {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ardoise);
+}
+
+.dossard-chiffre {
+  display: block;
+  margin: 0.2rem 0;
+  font-family: var(--titres);
+  font-size: clamp(4rem, 10vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cobalt);
+}
+
+.dossard-precision {
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--encre);
+  font-weight: 600;
+}
+
+@keyframes pose {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5rem) rotate(4deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-3deg);
+  }
+}
+
+/* ---------- Sections de contenu ---------- */
+
+.section {
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+  border-top: 2px solid var(--brume);
+}
+
+.section .conteneur {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 1.5rem clamp(2rem, 6vw, 5rem);
+}
+
+.section h2 {
+  margin-bottom: 0;
+}
+
+.texte {
+  max-width: 40rem;
+}
+
+.texte p {
+  margin: 0 0 1rem;
+}
+
+.texte p:last-child {
+  margin-bottom: 0;
+}
+
+.texte ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.texte li {
+  margin-bottom: 0.4rem;
+}
+
+/* Informations clés : liste de définitions séparée par des filets */
+
+.infos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0 2rem;
+  margin: 0;
+}
+
+.infos div {
+  padding-block: 1rem;
+  border-top: 3px solid var(--encre);
+}
+
+.infos dt {
+  font-size: 0.95rem;
+  color: var(--ardoise);
+}
+
+.infos dd {
+  margin: 0.15rem 0 0;
+  font-family: var(--titres);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Deux parcours côte à côte (page de la course) */
+
+.parcours {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+.parcours > div {
+  padding-top: 1rem;
+  border-top: 6px solid var(--cobalt);
+}
+
+.parcours > div + div {
+  border-top-color: var(--dossard);
+}
+
+.parcours p {
+  margin: 0 0 0.5rem;
+}
+
+/* ---------- Déroulé de la journée ---------- */
+
+.deroule {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deroule li {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0 1.5rem;
+}
+
+.deroule .heure {
+  padding-top: 0.15rem;
+  font-family: var(--titres);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.deroule .etape {
+  position: relative;
+  padding: 0 0 2rem 1.75rem;
+  border-left: 4px solid var(--brume);
+}
+
+.deroule li:last-child .etape {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.deroule .etape::before {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: -0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 3px solid var(--encre);
+  border-radius: 50%;
+  background: var(--papier);
+}
+
+.deroule .depart .etape::before {
+  background: var(--dossard);
+}
+
+.deroule .etape h3 {
+  margin-bottom: 0.2rem;
+  font-size: 1.45rem;
+}
+
+.deroule .etape p {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--ardoise);
+}
+
+/* ---------- Bouton et pied de page ---------- */
+
+.bouton {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+  border: 3px solid var(--encre);
+  border-radius: 4px;
+  background: var(--dossard);
+  color: var(--encre);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.bouton:hover {
+  background: var(--encre);
+  color: var(--papier);
+}
+
+.pied {
+  margin-top: 2rem;
+  padding-block: 1.75rem;
+  background: var(--encre);
+  color: var(--brume);
+  font-size: 1rem;
+}
+
+.pied p {
+  margin: 0;
+}
+
+/* ---------- Adaptation aux petits écrans ---------- */
+
+@media (max-width: 52rem) {
+  .ouverture .conteneur,
+  .section .conteneur {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dossard {
+    justify-self: start;
+    width: min(100%, 17rem);
+  }
+}
+
+@media (max-width: 30rem) {
+  body {
+    font-size: 1.0625rem;
+  }
+
+  .deroule li {
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: 0 1rem;
+  }
+
+  .deroule .heure {
+    font-size: 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .dossard {
+    animation: none;
+  }
+}
